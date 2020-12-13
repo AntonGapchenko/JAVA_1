@@ -5,10 +5,10 @@ import java.sql.SQLOutput;
 public class Lesson1 {
     public static void main(String[] args) {
         doExercise1(2, 3, 10, 3);
-        doExercise2(10, 5);
-        doExercise3(-10);
-        doExercise4("Антон");
-        doExercise5(2020);
+        System.out.println(doExercise2(2,20));
+        System.out.println(doExercise3(0));
+        System.out.println(doExercise4("Антон"));
+        System.out.println(doExercise5(2016));
     }
     //Задание №1;
 
@@ -26,35 +26,24 @@ public class Lesson1 {
     //Задание №2;
 
     private static boolean doExercise2(int a, int b) {
-        if (a+b>= 10 && a+b <= 20) {
-            return true;
-        }
-        return false;
+        return (a+b>= 10 && a+b <= 20);
     }
     //Задание №3;
 
-    private static void doExercise3(int a) {
-        if (a >= 0) {
-            System.out.println("Число - положительное");
-        } else {
-            System.out.println("Число - отрицательное");
-        }
+    private static boolean doExercise3(int a) {
+        return a>=0;
+
     }
     //Задание №4;
 
     private static String doExercise4(String name) {
         String expression = "Привет " + name + "!";
-        System.out.println(expression);
         return expression;
     }
 
     //Задание №5;
-    private static void doExercise5(int year) {
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-            System.out.println(year + " високосный год");
-        } else {
-            System.out.println(year + " невисокосный год");
-        }
+    private static boolean doExercise5(int year) {
+        return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
 
     }
 }
