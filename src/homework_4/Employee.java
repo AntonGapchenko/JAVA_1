@@ -7,7 +7,6 @@ public class Employee {
     private String position;
     private String phoneNumber;
     private int salary;
-
     private int age;
 
     public Employee( String name, String position, String phoneNumber, int salary, int age) {
@@ -21,16 +20,14 @@ public class Employee {
     }
 
     public void printInfo(){
-        System.out.println("ID:"+ id+" "+"ФИО:"+ name+" Должность:"+ position+" Номер телефона:"+ phoneNumber+" Зарплата:"+ salary+" Возраст:"+age);
+        System.out.println(this);
     }
 
+    @Override
+    public String toString() {
+        return "ID:"+ this.id+" "+"ФИО:"+ this.name+" Должность:"+ this.position+" Номер телефона:"+ this.phoneNumber+" Зарплата:"+ this.salary+" Возраст:"+this.age;
+    }
 
-    public void raiseSalary(){
-       int bonus=10000;
-       if (age>35)
-       salary+=bonus;
-
-   }
 
     public int getId() {
         return id;

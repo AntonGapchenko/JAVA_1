@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Employee employee1 = new Employee("Иванов Иван Иванович", "Инженер", "+79513456789", 100000, 35);
+        Employee employee1 = new Employee("Иванов Иван Иванович", "Инженер", "+79513456789", 100000, 36);
         // ---------------------------------------------------
         System.out.println(employee1.getName() + "-" + employee1.getPosition());
         System.out.println( "ID сотрудника "+employee1.getId());
-        System.out.println();
+        System.out.println("*******************************************");
         //---------------------------------------------------
         Employee[] employees = new Employee[5];
         employees[0] = employee1;
@@ -21,14 +21,19 @@ public class Main {
             if (employee.getAge() > 40)
                 employee.printInfo();
         }
-        System.out.println();
-
+        System.out.println("*******************************************");
         for (Employee employee : employees) {
-            employee.raiseSalary();
-            employee.printInfo();
-
+            System.out.println(raiseSalary(employee.getSalary(),employee.getAge()));
         }
-
+    }
+    private static int raiseSalary(int salary,int age){
+        int bonus=10000;
+        if (age>35){
+            salary+=bonus;
+            return salary;
+        }
+        return salary;
     }
 }
+
 
