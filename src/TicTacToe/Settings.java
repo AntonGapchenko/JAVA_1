@@ -15,8 +15,8 @@ public class Settings extends JFrame {
     private static final int MIN_LENGTH_FIELD = 3;
     private static final int MAX_LENGTH_FIELD = 10;
     private static final int MIN_LENGTH_WIN = 3;
-    private static final String FIELD_LENGTH_TEXT = "Размер Поля ";
-    private static final String LENGTH_WIN_TEXT = "Выигрышная Длина ";
+    private static final String FIELD_LENGTH_TEXT = "Р Р°Р·РјРµСЂ РџРѕР»СЏ ";
+    private static final String LENGTH_WIN_TEXT = "Р’С‹РёРіСЂС‹С€РЅР°СЏ Р”Р»РёРЅР° ";
     private MainWindow mainWindow;
     private JRadioButton humVsAi;
     private JRadioButton humVsHum;
@@ -25,7 +25,7 @@ public class Settings extends JFrame {
 
 
     Settings(MainWindow mainWindow) {
-        setTitle("Настройки Игры");
+        setTitle("РќР°СЃС‚СЂРѕР№РєРё РРіСЂС‹");
         setSize(WIN_WIDTH, WIN_HEIGHT);
         setResizable(false);
         this.mainWindow = mainWindow;
@@ -34,7 +34,7 @@ public class Settings extends JFrame {
         int posY = (int) gameWindowsBounds.getCenterY() - WIN_HEIGHT / 2;
         setLocation(posX, posY);
         setLayout(new GridLayout(10, 1));
-        JButton btnGame = new JButton("Начать Игру");
+        JButton btnGame = new JButton("РќР°С‡Р°С‚СЊ РРіСЂСѓ");
         btnGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,9 +50,9 @@ public class Settings extends JFrame {
     }
 
     private void addGameModeSettings() {
-        add(new JLabel("Выберите Режим Игры"));
-        humVsAi = new JRadioButton("Человек Vs Компьютер", true);
-        humVsHum = new JRadioButton("Человек Vs Человек");
+        add(new JLabel("Р’С‹Р±РµСЂРёС‚Рµ Р РµР¶РёРј РРіСЂС‹"));
+        humVsAi = new JRadioButton("Р§РµР»РѕРІРµРє Vs РљРѕРјРїСЊСЋС‚РµСЂ", true);
+        humVsHum = new JRadioButton("Р§РµР»РѕРІРµРє Vs Р§РµР»РѕРІРµРє");
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(humVsAi);
         buttonGroup.add(humVsHum);
@@ -85,10 +85,10 @@ public class Settings extends JFrame {
                 winLength.setText(LENGTH_WIN_TEXT + sliderWinSize.getValue());
             }
         });
-        add(new JLabel("Выберите Размер Поля:"));
+        add(new JLabel("Р’С‹Р±РµСЂРёС‚Рµ Р Р°Р·РјРµСЂ РџРѕР»СЏ:"));
         add(fieldLength);
         add(sliderFieldSize);
-        add(new JLabel("Выберите Выигрышную Позицию:"));
+        add(new JLabel("Р’С‹Р±РµСЂРёС‚Рµ Р’С‹РёРіСЂС‹С€РЅСѓСЋ РџРѕР·РёС†РёСЋ:"));
         add(winLength);
         add(sliderWinSize);
 
@@ -102,7 +102,7 @@ public class Settings extends JFrame {
         else if (humVsHum.isSelected()){
             gameMode=GameMap.HVSH;
         }else {
-            throw new RuntimeException("Неизвестный режим игры");
+            throw new RuntimeException("РќРµРёР·РІРµСЃС‚РЅС‹Р№ СЂРµР¶РёРј РёРіСЂС‹");
         }
         int fieldSize=sliderFieldSize.getValue();
         int winSize= sliderWinSize.getValue();

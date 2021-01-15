@@ -16,14 +16,14 @@ public class MainWindow extends JFrame {
 
     MainWindow() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Крестики-Нолики");
+        setTitle("РљСЂРµСЃС‚РёРєРё-РќРѕР»РёРєРё");
         setSize(WIN_WIDTH, WIN_HEIGHT);
         setLocation(POSX, POSY);
         setResizable(false);
         settings = new Settings(this);
         gameMap = new GameMap();
 
-        JButton btnStart = new JButton("Начать Игру");
+        JButton btnStart = new JButton("РќР°С‡Р°С‚СЊ РРіСЂСѓ");
         btnStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,7 +31,7 @@ public class MainWindow extends JFrame {
             }
         });
 
-        JButton btnExit = new JButton("Выход");
+        JButton btnExit = new JButton("Р’С‹С…РѕРґ");
         btnExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
